@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Entitas;
+﻿using Entitas;
 using UnityEngine;
 
 public class ColorBumpBootstrap : MonoBehaviour
@@ -11,7 +9,7 @@ public class ColorBumpBootstrap : MonoBehaviour
     private void Awake()
     {
         var contexts = Contexts.sharedInstance;
-        _gameSystems = new GameSystems(contexts.game, new GameObjectFactory());
+        _gameSystems = new GameSystems(contexts.game, new GameObjectFactory(), new PositionService());
     }
 
     private void Start()
@@ -33,13 +31,13 @@ public class ColorBumpBootstrap : MonoBehaviour
 
 public sealed class GameSystems : Systems
 {
-    public GameSystems(GameContext game, GameObjectFactory factory)
+    public GameSystems(GameContext game, GameObjectFactory factory, PositionService positionService)
     {
         Add(new ScreenSizeFeature(game));
         Add(new InputTapFeature(game));
         Add(new OutOfScreenFeature(game));
 
-        Add(new GameplayFeature(game, factory));
+        Add(new GameplayFeature(game, factory, positionService));
 
         Add(new TransformFeature(game));
         Add(new DestroyFeature(game));
@@ -48,8 +46,13 @@ public sealed class GameSystems : Systems
 
 public class GameplayFeature : Feature
 {
-    public GameplayFeature(GameContext game, GameObjectFactory factory)
+    public GameplayFeature(GameContext game, GameObjectFactory factory, PositionService positionService)
     {
-        
+        Add(new InitObstaclesSystem(game, positionService));
+        Add(new SpawnObstaclesSystem(game, factory));
+
+        Add(new SetRightObstaclesSystem(game));
+        Add(new SetRightObstacleColorSystem(game));
+        Add(new SetNotRightObstacleColorSystem(game));
     }
 }

@@ -22,22 +22,25 @@ public static class GameComponentsLookup {
     public const int LerpMove = 11;
     public const int Movable = 12;
     public const int MoveToPosition = 13;
-    public const int OutOfScreen = 14;
-    public const int Position = 15;
-    public const int Rotate = 16;
-    public const int Scale = 17;
-    public const int Screen = 18;
-    public const int ScreenSize = 19;
-    public const int SinusoidalAxis = 20;
-    public const int SinusoidalMove = 21;
-    public const int Speed = 22;
-    public const int Tapped = 23;
-    public const int Time = 24;
-    public const int TowardMoveSpeed = 25;
-    public const int TowardsMove = 26;
-    public const int TransformReplacer = 27;
+    public const int ObstacleBehaviour = 14;
+    public const int Obstacle = 15;
+    public const int OutOfScreen = 16;
+    public const int Position = 17;
+    public const int RightObstacle = 18;
+    public const int Rotate = 19;
+    public const int Scale = 20;
+    public const int Screen = 21;
+    public const int ScreenSize = 22;
+    public const int SinusoidalAxis = 23;
+    public const int SinusoidalMove = 24;
+    public const int Speed = 25;
+    public const int Tapped = 26;
+    public const int Time = 27;
+    public const int TowardMoveSpeed = 28;
+    public const int TowardsMove = 29;
+    public const int TransformReplacer = 30;
 
-    public const int TotalComponents = 28;
+    public const int TotalComponents = 31;
 
     public static readonly string[] componentNames = {
         "Amplitude",
@@ -54,8 +57,11 @@ public static class GameComponentsLookup {
         "LerpMove",
         "Movable",
         "MoveToPosition",
+        "ObstacleBehaviour",
+        "Obstacle",
         "OutOfScreen",
         "Position",
+        "RightObstacle",
         "Rotate",
         "Scale",
         "Screen",
@@ -85,8 +91,11 @@ public static class GameComponentsLookup {
         typeof(LerpMoveComponent),
         typeof(MovableComponent),
         typeof(MoveToPositionComponent),
+        typeof(ObstacleBehaviourComponent),
+        typeof(ObstacleComponent),
         typeof(OutOfScreenComponent),
         typeof(PositionComponent),
+        typeof(RightObstacleComponent),
         typeof(RotateComponent),
         typeof(ScaleComponent),
         typeof(ScreenComponent),
