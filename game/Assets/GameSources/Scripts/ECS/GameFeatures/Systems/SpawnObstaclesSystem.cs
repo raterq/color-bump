@@ -12,8 +12,7 @@ public class SpawnObstaclesSystem : IInitializeSystem
     public SpawnObstaclesSystem(GameContext game, GameObjectFactory factory)
     {
         _factory = factory;
-        _obstacles = game.GetGroup(GameMatcher.AllOf(GameMatcher.Obstacle).NoneOf(GameMatcher.TransformReplacer, 
-            GameMatcher.ObstacleBehaviour));
+        _obstacles = game.GetGroup(GameMatcher.AllOf(GameMatcher.Obstacle).NoneOf(GameMatcher.ObstacleBehaviour));
     }
 
     public void Initialize()
@@ -23,7 +22,6 @@ public class SpawnObstaclesSystem : IInitializeSystem
             var name = _obstaclesNames[Random.Range(0, _obstaclesNames.Count)];
             var gameObject = _factory.Instantiate(name);
 
-            obstacle.AddTransformReplacer(gameObject.AddComponent<TransformReplacer>());
             obstacle.AddObstacleBehaviour(gameObject.AddComponent<ObstacleBehaviour>());
         }
     }

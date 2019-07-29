@@ -9,41 +9,43 @@
 public static class GameComponentsLookup {
 
     public const int Amplitude = 0;
-    public const int CheckInScreen = 1;
-    public const int DestroyAfterAnimationFinished = 2;
-    public const int DestroyAfterOutOfScreen = 3;
-    public const int Destroyed = 4;
-    public const int Destroyer = 5;
-    public const int DirectionAxis = 6;
-    public const int Direction = 7;
-    public const int DirectionMove = 8;
-    public const int DirectionMoveSpeed = 9;
-    public const int InputTapHandler = 10;
-    public const int LerpMove = 11;
-    public const int Movable = 12;
-    public const int MoveToPosition = 13;
-    public const int ObstacleBehaviour = 14;
-    public const int Obstacle = 15;
-    public const int OutOfScreen = 16;
-    public const int Position = 17;
-    public const int RightObstacle = 18;
-    public const int Rotate = 19;
-    public const int Scale = 20;
-    public const int Screen = 21;
-    public const int ScreenSize = 22;
-    public const int SinusoidalAxis = 23;
-    public const int SinusoidalMove = 24;
-    public const int Speed = 25;
-    public const int Tapped = 26;
-    public const int Time = 27;
-    public const int TowardMoveSpeed = 28;
-    public const int TowardsMove = 29;
-    public const int TransformReplacer = 30;
+    public const int Character = 1;
+    public const int CheckInScreen = 2;
+    public const int DestroyAfterAnimationFinished = 3;
+    public const int DestroyAfterOutOfScreen = 4;
+    public const int Destroyed = 5;
+    public const int Destroyer = 6;
+    public const int DirectionAxis = 7;
+    public const int Direction = 8;
+    public const int DirectionMove = 9;
+    public const int DirectionMoveSpeed = 10;
+    public const int InputTapHandler = 11;
+    public const int LerpMove = 12;
+    public const int Movable = 13;
+    public const int MoveToPosition = 14;
+    public const int ObstacleBehaviour = 15;
+    public const int Obstacle = 16;
+    public const int OutOfScreen = 17;
+    public const int Position = 18;
+    public const int RightObstacle = 19;
+    public const int Rotate = 20;
+    public const int Scale = 21;
+    public const int Screen = 22;
+    public const int ScreenSize = 23;
+    public const int SinusoidalAxis = 24;
+    public const int SinusoidalMove = 25;
+    public const int Speed = 26;
+    public const int Tapped = 27;
+    public const int Time = 28;
+    public const int TowardMoveSpeed = 29;
+    public const int TowardsMove = 30;
+    public const int TransformReplacer = 31;
 
-    public const int TotalComponents = 31;
+    public const int TotalComponents = 32;
 
     public static readonly string[] componentNames = {
         "Amplitude",
+        "Character",
         "CheckInScreen",
         "DestroyAfterAnimationFinished",
         "DestroyAfterOutOfScreen",
@@ -78,6 +80,7 @@ public static class GameComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(AmplitudeComponent),
+        typeof(CharacterComponent),
         typeof(CheckInScreenComponent),
         typeof(DestroyAfterAnimationFinishedComponent),
         typeof(DestroyAfterOutOfScreenComponent),

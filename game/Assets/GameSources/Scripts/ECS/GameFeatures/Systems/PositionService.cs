@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PositionService
 {
-    private const float _upOffset = 1;
+    private const float _upOffset = 2;
     private const float _startZOffset = 2;
     private const float _lineStep = 1.5f;
 
